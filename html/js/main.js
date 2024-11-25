@@ -1,12 +1,12 @@
 function llamarApi(){
     fetch('https://fakestoreapi.com/products') 
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok'); 
+    .then(respuesta => {
+        if (!respuesta.ok) {
+            throw new Error('Error'); 
         } 
-        return response.json(); 
+        return respuesta.json(); 
     }) 
-    .then(data => {
+    .then(datos => {
         console.log(datos);
     })
     .catch(error => { 
