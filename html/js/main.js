@@ -1,13 +1,10 @@
 function llamarApi(){
-    fetch('https://fakestoreapi.com/products') 
-    .then(respuesta => {
-        if (!respuesta.ok) {
-            throw new Error('Error'); 
-        } 
-        return respuesta.json(); 
-    }) 
-    .then(datos => {
-        console.log(datos);
+    fetch('https://fakestoreapi.com/products', { 
+    method: 'GET'
+}).then((response)=>{
+     return response.json();
+}).then((data)=>{
+        console.log(data);
     })
     .catch(error => { 
         console.error('Hubo un problema con la solicitud Fetch:', error); 
